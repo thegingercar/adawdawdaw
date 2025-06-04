@@ -9,17 +9,30 @@ import TeamProfiles from './TeamProfiles';
 import JobSpecifications from './JobSpecifications';
 import LearningResources from './LearningResources';
 import Footer from './Footer';
+import SecretJokesArea from './SecretJokesArea';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showJokes, setShowJokes] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+
+    // Secret keyboard combination: Ctrl + Shift + J
+    const handleKeyDown = (event) => {
+      if (event.ctrlKey && event.shiftKey && event.key === 'J') {
+        event.preventDefault();
+        setShowJokes(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
     <motion.div 
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800"
       initial={{ opacity: 0 }}
       animate={{ opacity: isLoaded ? 1 : 0 }}
       transition={{ duration: 0.8 }}
@@ -31,6 +44,11 @@ const Home = () => {
       <JobSpecifications />
       <LearningResources />
       <Footer />
+      
+      <SecretJokesArea 
+        isOpen={showJokes} 
+        onClose={() => setShowJokes(false)} 
+      />
     </motion.div>
   );
 };
