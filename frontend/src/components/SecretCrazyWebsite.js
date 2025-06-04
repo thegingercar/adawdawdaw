@@ -186,9 +186,6 @@ const SecretCrazyWebsite = ({ isOpen, onClose }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}
-            animate={{
-              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-            }}
           >
             {scenes[currentScene].title}
           </motion.h1>
