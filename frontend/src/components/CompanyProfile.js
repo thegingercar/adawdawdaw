@@ -42,7 +42,7 @@ const CompanyProfile = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            About <span className="text-blue-400">Hot Beans Web</span>
+            About <span className="text-indigo-400">Hot Beans Web</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             We're a dynamic web development company passionate about creating exceptional digital experiences. 
@@ -58,7 +58,7 @@ const CompanyProfile = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-r from-slate-800/50 to-blue-900/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50">
+            <div className="bg-gradient-to-r from-slate-800/50 to-indigo-900/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50">
               <h3 className="text-2xl font-bold text-white mb-4">Our Story</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Hot Beans Web started as a small team of passionate developers with a big dream: 
@@ -88,7 +88,7 @@ const CompanyProfile = () => {
                 alt="Hot Beans Web Office"
                 className="w-full h-96 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/50 to-transparent"></div>
             </div>
             
             {/* Floating Stats */}
@@ -97,7 +97,7 @@ const CompanyProfile = () => {
               whileHover={{ scale: 1.05 }}
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400">50+</div>
+                <div className="text-3xl font-bold text-indigo-400">50+</div>
                 <div className="text-sm text-gray-300">Projects Delivered</div>
               </div>
             </motion.div>
@@ -107,7 +107,7 @@ const CompanyProfile = () => {
               whileHover={{ scale: 1.05 }}
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-400">3+</div>
+                <div className="text-3xl font-bold text-purple-400">3+</div>
                 <div className="text-sm text-gray-300">Years Growing</div>
               </div>
             </motion.div>
@@ -126,13 +126,13 @@ const CompanyProfile = () => {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 text-center hover:border-blue-500/50 transition-all duration-300"
+                className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 text-center hover:border-indigo-500/50 transition-all duration-300"
                 whileHover={{ y: -5, scale: 1.02 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
               >
-                <div className="text-blue-400 mb-4 flex justify-center">
+                <div className="text-indigo-400 mb-4 flex justify-center">
                   {value.icon}
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">{value.title}</h4>

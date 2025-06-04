@@ -130,7 +130,7 @@ const JobSpecifications = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Career <span className="text-blue-400">Opportunities</span>
+            Career <span className="text-indigo-400">Opportunities</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Discover exciting opportunities to grow your web development career with us. 
@@ -143,7 +143,7 @@ const JobSpecifications = () => {
           {jobPositions.map((job, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-r from-slate-800/50 to-slate-900/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-blue-500/50 transition-all duration-300"
+              className="bg-gradient-to-r from-slate-800/50 to-slate-900/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-indigo-500/50 transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ delay: index * 0.2 }}
@@ -154,12 +154,12 @@ const JobSpecifications = () => {
                   {/* Job Header */}
                   <div className="lg:w-1/3">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="text-blue-400">
+                      <div className="text-indigo-400">
                         {job.icon}
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-white">{job.title}</h3>
-                        <p className="text-blue-400 font-medium">{job.type}</p>
+                        <p className="text-indigo-400 font-medium">{job.type}</p>
                       </div>
                     </div>
                     
@@ -178,7 +178,7 @@ const JobSpecifications = () => {
                     
                     <Link to="/apply">
                       <motion.button
-                        className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:shadow-xl transition-all duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -196,7 +196,7 @@ const JobSpecifications = () => {
                       <ul className="space-y-2">
                         {job.requirements.map((req, reqIndex) => (
                           <li key={reqIndex} className="text-gray-300 text-sm flex items-start gap-2">
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full mt-2 flex-shrink-0"></div>
                             {req}
                           </li>
                         ))}
@@ -209,7 +209,7 @@ const JobSpecifications = () => {
                       <ul className="space-y-2">
                         {job.preferred.map((pref, prefIndex) => (
                           <li key={prefIndex} className="text-gray-300 text-sm flex items-start gap-2">
-                            <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                             {pref}
                           </li>
                         ))}
@@ -246,13 +246,13 @@ const JobSpecifications = () => {
             {generalRequirements.map((req, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 text-center hover:border-blue-500/50 transition-all duration-300"
+                className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 text-center hover:border-indigo-500/50 transition-all duration-300"
                 whileHover={{ y: -5, scale: 1.02 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
               >
-                <div className="text-blue-400 mb-4 flex justify-center">
+                <div className="text-indigo-400 mb-4 flex justify-center">
                   {req.icon}
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">{req.title}</h4>
@@ -264,7 +264,7 @@ const JobSpecifications = () => {
 
         {/* Application Process */}
         <motion.div
-          className="mt-20 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 text-center"
+          className="mt-20 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 backdrop-blur-sm border border-indigo-500/30 rounded-2xl p-8 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ delay: 1 }}
@@ -276,7 +276,7 @@ const JobSpecifications = () => {
           </p>
           <Link to="/apply">
             <motion.button
-              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
