@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationSuccess from './components/ApplicationSuccess';
@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.NODE_ENV === 'production' ? '.' : ''}>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/apply" element={<ApplicationForm />} />
