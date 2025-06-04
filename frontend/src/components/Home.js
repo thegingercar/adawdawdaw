@@ -10,19 +10,28 @@ import JobSpecifications from './JobSpecifications';
 import LearningResources from './LearningResources';
 import Footer from './Footer';
 import SecretJokesArea from './SecretJokesArea';
+import SecretCrazyWebsite from './SecretCrazyWebsite';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showJokes, setShowJokes] = useState(false);
+  const [showCrazyWebsite, setShowCrazyWebsite] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
 
-    // Secret keyboard combination: Ctrl + Shift + J
+    // Secret keyboard combinations
     const handleKeyDown = (event) => {
+      // Ctrl + Shift + J for jokes
       if (event.ctrlKey && event.shiftKey && event.key === 'J') {
         event.preventDefault();
         setShowJokes(true);
+      }
+      
+      // Ctrl + Shift + K for crazy website
+      if (event.ctrlKey && event.shiftKey && event.key === 'K') {
+        event.preventDefault();
+        setShowCrazyWebsite(true);
       }
     };
 
@@ -48,6 +57,11 @@ const Home = () => {
       <SecretJokesArea 
         isOpen={showJokes} 
         onClose={() => setShowJokes(false)} 
+      />
+      
+      <SecretCrazyWebsite 
+        isOpen={showCrazyWebsite} 
+        onClose={() => setShowCrazyWebsite(false)} 
       />
     </motion.div>
   );
