@@ -989,6 +989,53 @@
 
     <!-- JavaScript for Interactivity -->
     <script>
+        // Secret activation system
+        let typedSequence = '';
+        let secretActivated = false;
+        const secretWords = ['hotbeans', 'secret', 'beans', 'magic', 'abdi'];
+
+        // Listen for secret word typing
+        document.addEventListener('keypress', function(e) {
+            if (e.key.match(/[a-zA-Z]/)) {
+                typedSequence = (typedSequence + e.key.toLowerCase()).slice(-10);
+                
+                const foundSecret = secretWords.some(word => typedSequence.includes(word));
+                
+                if (foundSecret && !secretActivated) {
+                    secretActivated = true;
+                    activateSecretFeatures();
+                }
+            }
+        });
+
+        // Reset sequence after 5 seconds
+        setInterval(() => {
+            typedSequence = '';
+        }, 5000);
+
+        // Activate secret features
+        function activateSecretFeatures() {
+            // Show the secret button
+            const container = document.getElementById('secretButtonContainer');
+            const hint = document.getElementById('secretHint');
+            
+            if (container) {
+                container.style.display = 'block';
+                
+                // Add entrance animation
+                container.style.animation = 'fadeInUp 0.8s ease';
+            }
+            
+            if (hint) {
+                hint.style.display = 'block';
+                
+                // Hide hint after 3 seconds
+                setTimeout(() => {
+                    hint.style.display = 'none';
+                }, 3000);
+            }
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1016,9 +1063,9 @@
             const messages = [
                 "🎉 You found the footer secret!",
                 "✨ Abdi is a coding wizard!",
-                "🚀 Click the eye button for more magic!",
+                "🚀 Try typing 'hotbeans' or 'secret'!",
                 "💻 Hot Beans Web rocks!",
-                "🎭 Try the secret buttons!"
+                "🎭 Try the secret words: magic, beans, abdi!"
             ];
             alert(messages[Math.floor(Math.random() * messages.length)]);
         }
@@ -1028,10 +1075,8 @@
             const choice = confirm("🎭 Choose your adventure:\n\nOK = Developer Jokes 😂\nCancel = Crazy Mode 🚀");
             
             if (choice) {
-                // Show jokes
                 showDeveloperJokes();
             } else {
-                // Show crazy mode
                 showCrazyMode();
             }
         }
@@ -1050,12 +1095,11 @@
             ];
             
             const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-            alert("🤣 Developer Joke Time!\n\n" + randomJoke);
+            alert("🤣 Developer Joke Time!\n\n" + randomJoke + "\n\n💡 Tip: Try typing 'magic' for more secrets!");
         }
 
         // Crazy mode function
         function showCrazyMode() {
-            // Create crazy overlay
             const overlay = document.createElement('div');
             overlay.style.cssText = `
                 position: fixed;
@@ -1080,34 +1124,41 @@
                 <h1 style="font-size: 4rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); animation: bounce 1s infinite;">
                     🌟 CRAZY MODE ACTIVATED! 🌟
                 </h1>
-                <p style="font-size: 1.5rem; margin-bottom: 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                <p style="font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                     Welcome to the digital dimension! 🚀
+                </p>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                    You discovered this by typing secret words! 🎭
                 </p>
                 <button onclick="this.parentElement.remove()" 
                         style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 15px 30px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; backdrop-filter: blur(10px);">
                     🌈 RETURN TO REALITY 🌈
                 </button>
+                <p style="position: absolute; bottom: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    Secret words: hotbeans, secret, magic, beans, abdi
+                </p>
             `;
             
             document.body.appendChild(overlay);
             
-            // Auto remove after 10 seconds
             setTimeout(() => {
                 if (overlay.parentElement) {
                     overlay.remove();
                 }
-            }, 10000);
+            }, 15000);
         }
 
-        // Keyboard shortcuts
+        // Keyboard shortcuts (only work after secret activation)
         document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-                e.preventDefault();
-                showDeveloperJokes();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key === 'K') {
-                e.preventDefault();
-                showCrazyMode();
+            if (secretActivated) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+                    e.preventDefault();
+                    showDeveloperJokes();
+                }
+                if (e.ctrlKey && e.shiftKey && e.key === 'K') {
+                    e.preventDefault();
+                    showCrazyMode();
+                }
             }
         });
 
@@ -1115,7 +1166,6 @@
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simple validation
             const requiredFields = this.querySelectorAll('[required]');
             let isValid = true;
             
@@ -1129,7 +1179,6 @@
             });
             
             if (isValid) {
-                // Simulate form submission
                 const overlay = document.createElement('div');
                 overlay.style.cssText = `
                     position: fixed;
@@ -1152,8 +1201,11 @@
                     <div style="background: linear-gradient(45deg, #10b981, #3b82f6); padding: 3rem; border-radius: 20px; max-width: 500px; margin: 2rem;">
                         <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
                         <h2 style="font-size: 2rem; margin-bottom: 1rem;">Application Submitted!</h2>
-                        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">
                             Thank you for applying to Hot Beans Web! We'll review your application and get back to you within 3-5 business days.
+                        </p>
+                        <p style="font-size: 1rem; margin-bottom: 2rem; opacity: 0.9;">
+                            🎭 Pro tip: Try typing secret words on our website for hidden features!
                         </p>
                         <button onclick="this.parentElement.parentElement.remove()" 
                                 style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 15px 30px; border-radius: 50px; font-size: 1.1rem; cursor: pointer;">
@@ -1163,27 +1215,24 @@
                 `;
                 
                 document.body.appendChild(overlay);
-                
-                // Reset form
                 this.reset();
             } else {
                 alert('⚠️ Please fill in all required fields!');
             }
         });
 
-        // Add some visual flair on scroll
+        // Add scroll effects
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const parallax = scrolled * 0.5;
             
-            // Add parallax effect to hero section
             const hero = document.querySelector('#home');
             if (hero) {
                 hero.style.transform = `translateY(${parallax}px)`;
             }
         });
 
-        // Add loading animation
+        // Loading animation
         window.addEventListener('load', function() {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease';
