@@ -275,10 +275,10 @@ const SecretCrazyWebsite = ({ isOpen, onClose }) => {
         <motion.div
           className="absolute inset-0 border-8 border-white/50 rounded-3xl"
           animate={{
-            borderColor: ['rgba(255,255,255,0.5)', 'rgba(255,0,255,0.8)', 'rgba(0,255,255,0.8)', 'rgba(255,255,0,0.8)', 'rgba(255,255,255,0.5)'],
-            borderWidth: ['8px', '16px', '8px'],
+            borderColor: 'rgba(255,0,255,0.8)',
+            borderWidth: '12px',
           }}
-          transition={{ duration: 4, repeat: Infinity }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
         />
       </motion.div>
     </AnimatePresence>
