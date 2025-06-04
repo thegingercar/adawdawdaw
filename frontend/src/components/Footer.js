@@ -188,7 +188,24 @@ const Footer = () => {
               <span>© 2024 Hot Beans Web. Made with</span>
               <Heart size={16} className="text-red-400" />
               <span>by</span>
-              <span className="text-indigo-400 font-medium">Abdi Jama</span>
+              <motion.span 
+                className="text-indigo-400 font-medium cursor-pointer hover:text-purple-400 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  // Secret easter egg in the footer!
+                  const messages = [
+                    "🎉 You found the footer secret!",
+                    "✨ Abdi is a coding wizard!",
+                    "🚀 Click the eye button for more magic!",
+                    "💻 Hot Beans Web rocks!",
+                    "🎭 Try Ctrl+Shift+J or K!"
+                  ];
+                  alert(messages[Math.floor(Math.random() * messages.length)]);
+                }}
+              >
+                Abdi Jama
+              </motion.span>
             </div>
 
             {/* Social Links */}
