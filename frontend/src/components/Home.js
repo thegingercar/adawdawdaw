@@ -11,6 +11,7 @@ import LearningResources from './LearningResources';
 import Footer from './Footer';
 import SecretJokesArea from './SecretJokesArea';
 import SecretCrazyWebsite from './SecretCrazyWebsite';
+import SecretButtons from './SecretButtons';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,6 +54,12 @@ const Home = () => {
       <JobSpecifications />
       <LearningResources />
       <Footer />
+      
+      {/* Secret Buttons */}
+      <SecretButtons 
+        onShowJokes={() => setShowJokes(true)}
+        onShowCrazyWebsite={() => setShowCrazyWebsite(true)}
+      />
       
       <SecretJokesArea 
         isOpen={showJokes} 
