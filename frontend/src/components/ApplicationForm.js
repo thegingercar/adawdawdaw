@@ -535,6 +535,22 @@ const ApplicationForm = () => {
           </motion.div>
         </div>
       </div>
+      
+      {/* Secret Buttons */}
+      <SecretButtons 
+        onShowJokes={() => setShowJokes(true)}
+        onShowCrazyWebsite={() => setShowCrazyWebsite(true)}
+      />
+      
+      <SecretJokesArea 
+        isOpen={showJokes} 
+        onClose={() => setShowJokes(false)} 
+      />
+      
+      <SecretCrazyWebsite 
+        isOpen={showCrazyWebsite} 
+        onClose={() => setShowCrazyWebsite(false)} 
+      />
     </div>
   );
 };
