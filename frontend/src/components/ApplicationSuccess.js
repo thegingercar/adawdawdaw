@@ -8,6 +8,8 @@ import SecretCrazyWebsite from './SecretCrazyWebsite';
 
 const ApplicationSuccess = () => {
   const [showConfetti, setShowConfetti] = useState(true);
+  const [showJokes, setShowJokes] = useState(false);
+  const [showCrazyWebsite, setShowCrazyWebsite] = useState(false);
 
   useEffect(() => {
     // Hide confetti after animation
