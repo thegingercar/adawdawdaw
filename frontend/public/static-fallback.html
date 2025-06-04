@@ -960,10 +960,32 @@
         </div>
     </footer>
 
-    <!-- Secret Button for Fun Features -->
-    <button class="secret-btn" onclick="showSecretMenu()" title="🎭 Secret Features">
-        👁️
-    </button>
+    <!-- Secret Button for Fun Features - Hidden until activated -->
+    <div id="secretButtonContainer" style="display: none;">
+        <button class="secret-btn" onclick="showSecretMenu()" title="🎭 Secret Features">
+            👁️
+        </button>
+    </div>
+
+    <!-- Secret Activation Hint -->
+    <div id="secretHint" style="
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 1000;
+        background: linear-gradient(45deg, #8b5cf6, #3b82f6);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        display: none;
+        text-align: center;
+        max-width: 250px;
+        animation: bounce 1s ease infinite;
+    ">
+        <div style="font-size: 1.2rem; margin-bottom: 5px;">🎉 Secret Activated!</div>
+        <div style="font-size: 0.9rem;">Look for the magic button below...</div>
+    </div>
 
     <!-- JavaScript for Interactivity -->
     <script>
