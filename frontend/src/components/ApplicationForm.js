@@ -6,6 +6,9 @@ import {
   ArrowRight, ArrowLeft, Check, Upload, Link as LinkIcon 
 } from 'lucide-react';
 import Navigation from './Navigation';
+import SecretButtons from './SecretButtons';
+import SecretJokesArea from './SecretJokesArea';
+import SecretCrazyWebsite from './SecretCrazyWebsite';
 
 const ApplicationForm = () => {
   const navigate = useNavigate();
