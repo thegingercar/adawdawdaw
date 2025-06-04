@@ -231,9 +231,9 @@ const SecretCrazyWebsite = ({ isOpen, onClose }) => {
               }}
               whileTap={{ scale: 0.9 }}
               animate={{ 
-                boxShadow: ['0 0 20px rgba(147, 51, 234, 0.5)', '0 0 40px rgba(147, 51, 234, 0.8)', '0 0 20px rgba(147, 51, 234, 0.5)']
+                boxShadow: '0 0 30px rgba(147, 51, 234, 0.8)'
               }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}
             >
               🌈 NEXT DIMENSION 🌈
             </motion.button>
