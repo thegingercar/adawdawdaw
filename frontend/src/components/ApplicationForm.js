@@ -148,7 +148,7 @@ const ApplicationForm = () => {
             onChange={(e) => handleInputChange('firstName', e.target.value)}
             className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
               errors.firstName ? 'border-red-500' : 'border-slate-600'
-            } text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors`}
+            } text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors`}
             placeholder="Enter your first name"
           />
           {errors.firstName && <p className="text-red-400 text-sm mt-1">{errors.firstName}</p>}
@@ -162,7 +162,7 @@ const ApplicationForm = () => {
             onChange={(e) => handleInputChange('lastName', e.target.value)}
             className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
               errors.lastName ? 'border-red-500' : 'border-slate-600'
-            } text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors`}
+            } text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors`}
             placeholder="Enter your last name"
           />
           {errors.lastName && <p className="text-red-400 text-sm mt-1">{errors.lastName}</p>}
@@ -177,7 +177,7 @@ const ApplicationForm = () => {
           onChange={(e) => handleInputChange('email', e.target.value)}
           className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
             errors.email ? 'border-red-500' : 'border-slate-600'
-          } text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors`}
+          } text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors`}
           placeholder="your.email@example.com"
         />
         {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
@@ -191,7 +191,7 @@ const ApplicationForm = () => {
           onChange={(e) => handleInputChange('phone', e.target.value)}
           className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
             errors.phone ? 'border-red-500' : 'border-slate-600'
-          } text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors`}
+          } text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors`}
           placeholder="+44 7123 456789"
         />
         {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
@@ -202,7 +202,7 @@ const ApplicationForm = () => {
         <textarea
           value={formData.address}
           onChange={(e) => handleInputChange('address', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors resize-none"
           placeholder="Your address (optional)"
           rows="3"
         />
@@ -225,7 +225,7 @@ const ApplicationForm = () => {
           onChange={(e) => handleInputChange('position', e.target.value)}
           className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
             errors.position ? 'border-red-500' : 'border-slate-600'
-          } text-white focus:border-blue-500 focus:outline-none transition-colors`}
+          } text-white focus:border-indigo-500 focus:outline-none transition-colors`}
         >
           <option value="">Select a position</option>
           {positions.map(position => (
@@ -242,7 +242,7 @@ const ApplicationForm = () => {
           onChange={(e) => handleInputChange('experience', e.target.value)}
           className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
             errors.experience ? 'border-red-500' : 'border-slate-600'
-          } text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none`}
+          } text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors resize-none`}
           placeholder="Describe your web development experience, education, bootcamps, or self-learning journey..."
           rows="4"
         />
@@ -256,7 +256,7 @@ const ApplicationForm = () => {
           onChange={(e) => handleInputChange('availability', e.target.value)}
           className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
             errors.availability ? 'border-red-500' : 'border-slate-600'
-          } text-white focus:border-blue-500 focus:outline-none transition-colors`}
+          } text-white focus:border-indigo-500 focus:outline-none transition-colors`}
         >
           <option value="">Select availability</option>
           <option value="immediately">Available Immediately</option>
@@ -272,7 +272,7 @@ const ApplicationForm = () => {
         <select
           value={formData.salary}
           onChange={(e) => handleInputChange('salary', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:border-blue-500 focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:border-indigo-500 focus:outline-none transition-colors"
         >
           <option value="">Select salary range</option>
           <option value="18k-22k">£18,000 - £22,000</option>
@@ -303,7 +303,7 @@ const ApplicationForm = () => {
               onClick={() => handleSkillToggle(skill)}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 formData.skills.includes(skill)
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-indigo-600 text-white'
                   : 'bg-slate-700/50 text-gray-300 hover:bg-slate-600/50'
               }`}
               whileHover={{ scale: 1.05 }}
@@ -322,7 +322,7 @@ const ApplicationForm = () => {
           type="url"
           value={formData.portfolio}
           onChange={(e) => handleInputChange('portfolio', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors"
           placeholder="https://yourportfolio.com"
         />
       </div>
@@ -333,7 +333,7 @@ const ApplicationForm = () => {
           type="url"
           value={formData.github}
           onChange={(e) => handleInputChange('github', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors"
           placeholder="https://github.com/yourusername"
         />
         {errors.portfolio && <p className="text-red-400 text-sm mt-1">{errors.portfolio}</p>}
@@ -345,7 +345,7 @@ const ApplicationForm = () => {
           type="url"
           value={formData.linkedin}
           onChange={(e) => handleInputChange('linkedin', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors"
           placeholder="https://linkedin.com/in/yourprofile"
         />
       </div>
@@ -367,7 +367,7 @@ const ApplicationForm = () => {
           onChange={(e) => handleInputChange('motivation', e.target.value)}
           className={`w-full px-4 py-3 rounded-lg bg-slate-700/50 border ${
             errors.motivation ? 'border-red-500' : 'border-slate-600'
-          } text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none`}
+          } text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors resize-none`}
           placeholder="Tell us what motivates you to work with us and how you see yourself contributing to our team..."
           rows="4"
         />
@@ -379,7 +379,7 @@ const ApplicationForm = () => {
         <textarea
           value={formData.projects}
           onChange={(e) => handleInputChange('projects', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors resize-none"
           placeholder="Describe some projects you've worked on, challenges you've overcome, or technologies you're excited to learn..."
           rows="4"
         />
@@ -390,7 +390,7 @@ const ApplicationForm = () => {
         <textarea
           value={formData.references}
           onChange={(e) => handleInputChange('references', e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:outline-none transition-colors resize-none"
           placeholder="Professional or educational references (optional)"
           rows="3"
         />
@@ -399,7 +399,7 @@ const ApplicationForm = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800">
       <Navigation />
       
       <div className="pt-24 pb-20">
@@ -411,7 +411,7 @@ const ApplicationForm = () => {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Join Our <span className="text-blue-400">Development Team</span>
+              Join Our <span className="text-indigo-400">Development Team</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Take the first step towards your web development career with Hot Beans Web
@@ -430,14 +430,14 @@ const ApplicationForm = () => {
                 <div key={step.number} className="flex items-center">
                   <div className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300 ${
                     currentStep >= step.number
-                      ? 'bg-blue-600 border-blue-600 text-white'
+                      ? 'bg-indigo-600 border-indigo-600 text-white'
                       : 'border-slate-600 text-slate-400'
                   }`}>
                     {currentStep > step.number ? <Check size={20} /> : step.icon}
                   </div>
                   {index < steps.length - 1 && (
                     <div className={`w-16 md:w-32 h-0.5 transition-all duration-300 ${
-                      currentStep > step.number ? 'bg-blue-600' : 'bg-slate-600'
+                      currentStep > step.number ? 'bg-indigo-600' : 'bg-slate-600'
                     }`} />
                   )}
                 </div>
@@ -493,7 +493,7 @@ const ApplicationForm = () => {
                 <motion.button
                   type="button"
                   onClick={nextStep}
-                  className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-200"
+                  className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-xl transition-all duration-200"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
