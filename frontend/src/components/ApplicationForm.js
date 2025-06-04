@@ -41,6 +41,8 @@ const ApplicationForm = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showJokes, setShowJokes] = useState(false);
+  const [showCrazyWebsite, setShowCrazyWebsite] = useState(false);
 
   const steps = [
     { number: 1, title: 'Personal Info', icon: <User size={20} /> },
