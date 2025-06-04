@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Code } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,28 @@ const Navigation = () => {
     { name: 'Learning', href: '#learning' },
   ];
 
+  const handleNavClick = (href, itemName) => {
+    setIsOpen(false);
+    
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = '/' + href;
+      return;
+    }
+
+    // Smooth scroll to section
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <motion.nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -39,8 +62,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
+            onClick={() => handleNavClick('#home', 'Home')}
           >
             <div className="bg-gradient-to-r from-indigo-500 to-purple-400 p-2 rounded-lg">
               <Code className="w-6 h-6 text-white" />
@@ -53,17 +77,17 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.button
                 key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                onClick={() => handleNavClick(item.href, item.name)}
+                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium bg-transparent border-none cursor-pointer"
                 whileHover={{ y: -2 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
                 {item.name}
-              </motion.a>
+              </motion.button>
             ))}
             <Link to="/apply">
               <motion.button
@@ -98,14 +122,13 @@ const Navigation = () => {
             exit={{ opacity: 0, y: -20 }}
           >
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block text-gray-300 hover:text-white py-2 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleNavClick(item.href, item.name)}
+                className="block text-gray-300 hover:text-white py-2 transition-colors duration-200 w-full text-left bg-transparent border-none cursor-pointer"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
             <Link to="/apply">
               <button

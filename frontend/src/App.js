@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.NODE_ENV === 'production' ? '.' : ''}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/apply" element={<ApplicationForm />} />
