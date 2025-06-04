@@ -9,6 +9,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ensure sections have proper spacing for navigation */
+section {
+  scroll-margin-top: 80px; /* Account for fixed navbar */
+}
+
+/* Smooth scrolling fallback for all browsers */
+* {
+  scroll-behavior: smooth;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
