@@ -221,6 +221,22 @@ const ApplicationSuccess = () => {
           <div className="text-6xl opacity-20">🎉</div>
         </motion.div>
       </div>
+      
+      {/* Secret Buttons */}
+      <SecretButtons 
+        onShowJokes={() => setShowJokes(true)}
+        onShowCrazyWebsite={() => setShowCrazyWebsite(true)}
+      />
+      
+      <SecretJokesArea 
+        isOpen={showJokes} 
+        onClose={() => setShowJokes(false)} 
+      />
+      
+      <SecretCrazyWebsite 
+        isOpen={showCrazyWebsite} 
+        onClose={() => setShowCrazyWebsite(false)} 
+      />
     </div>
   );
 };
