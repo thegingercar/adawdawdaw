@@ -46,11 +46,11 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-gradient-to-r from-blue-500 to-cyan-400 p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-indigo-500 to-purple-400 p-2 rounded-lg">
                 <Code className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold text-white">
-                Hot Beans <span className="text-blue-400">Web</span>
+                Hot Beans <span className="text-indigo-400">Web</span>
               </span>
             </div>
             
@@ -61,17 +61,17 @@ const Footer = () => {
             
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
-                <Mail size={16} className="text-blue-400" />
+                <Mail size={16} className="text-indigo-400" />
                 <a href="mailto:careers@hotbeansweb.com" className="hover:text-white transition-colors">
                   careers@hotbeansweb.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <Phone size={16} className="text-blue-400" />
+                <Phone size={16} className="text-indigo-400" />
                 <span>+44 20 7123 4567</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <MapPin size={16} className="text-blue-400" />
+                <MapPin size={16} className="text-indigo-400" />
                 <span>London, United Kingdom</span>
               </div>
             </div>
@@ -90,7 +90,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2"
+                    className="text-gray-300 hover:text-indigo-400 transition-colors duration-200 flex items-center gap-2"
                   >
                     {link.name}
                   </a>
@@ -99,7 +99,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/apply"
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2"
+                  className="text-gray-300 hover:text-indigo-400 transition-colors duration-200 flex items-center gap-2"
                 >
                   Apply Now
                 </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={service.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-300 hover:text-indigo-400 transition-colors duration-200"
                   >
                     {service.name}
                   </a>
@@ -144,7 +144,7 @@ const Footer = () => {
                     href={link.href}
                     target={link.external ? "_blank" : "_self"}
                     rel={link.external ? "noopener noreferrer" : ""}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2"
+                    className="text-gray-300 hover:text-indigo-400 transition-colors duration-200 flex items-center gap-2"
                   >
                     {link.name}
                     {link.external && <ExternalLink size={14} />}
@@ -161,7 +161,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 text-center"
+          className="mt-16 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 backdrop-blur-sm border border-indigo-500/30 rounded-2xl p-8 text-center"
         >
           <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Journey?</h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
@@ -169,7 +169,7 @@ const Footer = () => {
           </p>
           <Link to="/apply">
             <motion.button
-              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -188,7 +188,7 @@ const Footer = () => {
               <span>© 2024 Hot Beans Web. Made with</span>
               <Heart size={16} className="text-red-400" />
               <span>by</span>
-              <span className="text-blue-400 font-medium">Abdi Jama</span>
+              <span className="text-indigo-400 font-medium">Abdi Jama</span>
             </div>
 
             {/* Social Links */}
@@ -203,7 +203,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-indigo-400 transition-colors"
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -211,7 +211,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="text-gray-400 hover:text-cyan-400 transition-colors"
+                className="text-gray-400 hover:text-purple-400 transition-colors"
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -237,7 +237,7 @@ const Footer = () => {
         {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/10 rounded-full"
+            className="absolute w-1 h-1 bg-indigo-400/10 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
