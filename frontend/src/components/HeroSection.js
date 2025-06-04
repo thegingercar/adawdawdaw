@@ -14,7 +14,7 @@ const HeroSection = () => {
             backgroundImage: `url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5')`
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-900/80 to-slate-800/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-indigo-900/80 to-slate-800/90"></div>
         </div>
       </div>
 
@@ -23,7 +23,7 @@ const HeroSection = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-blue-400/20 rounded-full"
+            className="absolute w-2 h-2 bg-indigo-400/20 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -56,7 +56,7 @@ const HeroSection = () => {
           >
             Shape Your Future in
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-600 bg-clip-text text-transparent">
               Web Development
             </span>
           </motion.h1>
@@ -79,10 +79,10 @@ const HeroSection = () => {
           >
             <Link to="/apply">
               <motion.button
-                className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center gap-2 hover:shadow-2xl transition-all duration-300"
+                className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center gap-2 hover:shadow-2xl transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05, 
-                  boxShadow: '0 20px 40px rgba(59, 130, 246, 0.4)' 
+                  boxShadow: '0 20px 40px rgba(99, 102, 241, 0.4)' 
                 }}
                 whileTap={{ scale: 0.95 }}
               >

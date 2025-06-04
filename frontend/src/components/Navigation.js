@@ -42,11 +42,11 @@ const Navigation = () => {
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-400 p-2 rounded-lg">
+            <div className="bg-gradient-to-r from-indigo-500 to-purple-400 p-2 rounded-lg">
               <Code className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold text-white">
-              Hot Beans <span className="text-blue-400">Web</span>
+              Hot Beans <span className="text-indigo-400">Web</span>
             </span>
           </motion.div>
 
@@ -67,8 +67,8 @@ const Navigation = () => {
             ))}
             <Link to="/apply">
               <motion.button
-                className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200"
-                whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(59, 130, 246, 0.5)' }}
+                className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200"
+                whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(99, 102, 241, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
               >
                 Apply Now
@@ -109,7 +109,7 @@ const Navigation = () => {
             ))}
             <Link to="/apply">
               <button
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full font-semibold mt-4 hover:shadow-lg transition-all duration-200"
+                className="w-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-6 py-2 rounded-full font-semibold mt-4 hover:shadow-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Apply Now
