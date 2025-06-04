@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Home, Mail, Calendar, ArrowRight } from 'lucide-react';
+import SecretButtons from './SecretButtons';
+import SecretJokesArea from './SecretJokesArea';
+import SecretCrazyWebsite from './SecretCrazyWebsite';
 
 const ApplicationSuccess = () => {
   const [showConfetti, setShowConfetti] = useState(true);
