@@ -251,9 +251,9 @@ const SecretCrazyWebsite = ({ isOpen, onClose }) => {
               whileHover={{ scale: 1.1, rotate: 360 }}
               whileTap={{ scale: 0.9 }}
               animate={{ 
-                background: ['linear-gradient(45deg, #10b981, #3b82f6)', 'linear-gradient(45deg, #3b82f6, #8b5cf6)', 'linear-gradient(45deg, #8b5cf6, #10b981)']
+                rotate: [0, 5, -5, 0]
               }}
-              transition={{ duration: 3, repeat: Infinity }}
+              transition={{ duration: 2, repeat: Infinity }}
             >
               ✨ MORE MAGIC ✨
             </motion.button>
