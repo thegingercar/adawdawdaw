@@ -83,12 +83,13 @@ const SecretCrazyWebsite = ({ isOpen, onClose }) => {
         <motion.div
           className="absolute inset-0"
           animate={{
-            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+            backgroundPosition: ['0% 50%', '100% 50%'],
           }}
           transition={{
-            duration: 20,
+            duration: 10,
             repeat: Infinity,
             ease: 'linear',
+            repeatType: 'reverse'
           }}
           style={{
             background: `linear-gradient(-45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000)`,
